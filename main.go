@@ -35,6 +35,7 @@ func main() {
 	r.Post("/", routes.PostTaskHandler)
 	r.Get("/tasks", routes.GetTasksHander)
 	r.Get("/tasks/{ID}", routes.GetTaskHadler)
+  r.Delete("/tasks/{ID}", routes.DeleteTaskHandler)
 
 	http.ListenAndServe(":8000", r)
 }

@@ -46,3 +46,20 @@ func GetTaskHadler(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(&task)
 }
+
+func DeleteTaskHandler(w http.ResponseWriter, r *http.Request) {
+	var task models.Task
+
+	params := chi.URLParam(r, "ID")
+
+	db.DB.First(&task, params)
+
+	if task.ID == 0 {
+		w.WriteHeader(http.StatusBadRequest)
+		w.Write([]byte("Task not found"))
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+	db.DB.Unscoped().Delete(&task)
+}

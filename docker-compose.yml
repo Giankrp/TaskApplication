@@ -2,10 +2,10 @@ version: '3.8'
 services:
   db:
     image: postgres
-    container_name: chiback
+    container_name: ${CONTAINER_NAME}
     environment:
-      POSTGRES_USER: gian
-      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     volumes:

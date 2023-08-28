@@ -13,7 +13,9 @@ func UsersHandler(w http.ResponseWriter, r *http.Request) {
 	var users []models.User
 
 	db.DB.Find(&users)
-
+	for i := range users {
+		db.DB.Model(&users[i]).Association("Tasks").Find(&users[i].Tasks)
+	}
 	json.NewEncoder(w).Encode(&users)
 }
 
@@ -43,7 +45,7 @@ func GetUserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-  db.DB.Model(&user).Association("Tasks").Find(&user.Tasks)
+	db.DB.Model(&user).Association("Tasks").Find(&user.Tasks)
 	json.NewEncoder(w).Encode(&user)
 }
 

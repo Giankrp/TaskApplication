@@ -63,14 +63,14 @@ Este repositorio contiene un ejemplo simple de cómo crear un servidor web en Go
 
 ## Recursos Adicionales
 
-- Documentación de Chi: https://go-chi.io/#/
+- Documentación de [Chi](https://go-chi.io/#/)
 
-- Documentación de ari (live Reload utilizado): https://github.com/cosmtrek/air
+- Documentación de [ari]( https://github.com/cosmtrek/air) (live Reload utilizado)
 
-- Documentación de Go: https://golang.org/doc/
+- Documentación de  [Go](https://golang.org/doc/install)
 
-- Documentación del contenedor de postgreSQL asi como su archivo docker-compose: https://hub.docker.com/_/postgres
+- Documentación del contenedor de postgreSQL asi como su archivo docker-compose: [postgreSQL](https://hub.docker.com/_/postgres)
 
-- [Go](https://golang.org/doc/install)
 - [Docker](https://docs.docker.com/get-docker/)
+
 - [Docker Compose](https://docs.docker.com/compose/install/)

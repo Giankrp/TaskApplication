@@ -65,7 +65,7 @@ Este repositorio contiene un ejemplo simple de cómo crear un servidor web en Go
 
 - Documentación de [Chi](https://go-chi.io/#/)
 
-- Documentación de [ari]( https://github.com/cosmtrek/air) (live Reload utilizado)
+- Documentación de [air]( https://github.com/cosmtrek/air) (live Reload utilizado)
 
 - Documentación de  [Go](https://golang.org/doc/install)
 

@@ -8,6 +8,7 @@ import (
 	"github.com/Giankrp/chiBack/routes"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/go-chi/cors"
 )
 
 func main() {
@@ -24,6 +25,16 @@ func main() {
 	// NOTE: MIDDLEWARE
 	r.Use(middleware.Logger)
 
+	r.Use(cors.Handler(cors.Options{
+		// AllowedOrigins:   []string{"https://foo.com"}, // Use this to allow specific origin hosts
+    AllowedOrigins: []string{"https://*", "http://localhost:5173"},
+		// AllowOriginFunc:  func(r *http.Request, origin string) bool { return true },
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+		ExposedHeaders:   []string{"Link"},
+		AllowCredentials: false,
+		MaxAge:           300, // Maximum value not ignored by any of major browsers
+	}))
 	// NOTE: USERS ROUTES
 	r.Get("/", routes.HomeHandler)
 	r.Post("/users", routes.CreateUserHandler)
@@ -35,7 +46,7 @@ func main() {
 	r.Post("/", routes.PostTaskHandler)
 	r.Get("/tasks", routes.GetTasksHander)
 	r.Get("/tasks/{ID}", routes.GetTaskHadler)
-  r.Delete("/tasks/{ID}", routes.DeleteTaskHandler)
+	r.Delete("/tasks/{ID}", routes.DeleteTaskHandler)
 
 	http.ListenAndServe(":8000", r)
 }

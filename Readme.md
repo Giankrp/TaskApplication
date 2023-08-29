@@ -45,6 +45,10 @@ Este repositorio contiene un ejemplo simple de cómo crear un servidor web en Go
   ```bash
     docker compose up -d
    ```
+- En caso de usar docker:
+ ```bash
+    docker compose up -d
+  ```
 - Para hacer las consultas ejecutar el siguiente comando:
   ```bash
     docker exec -it some-postgres bash

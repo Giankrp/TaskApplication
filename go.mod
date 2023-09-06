@@ -1,6 +1,6 @@
 module github.com/Giankrp/chiBack
 
-go 1.20.2
+go 1.23
 
 require (
 	github.com/go-chi/chi/v5 v5.0.10
